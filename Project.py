@@ -14,7 +14,7 @@ window.geometry("600x500")
 
 #---------------Function ---------------------------------
 mixer.init()
-mixer.music.load('C:/Users/yassine/Desktop/Project/Music/50cent.mp3')#add path of this project were u clone it and Where the music file is . 
+mixer.music.load('C:/Users/yassine/Desktop/Birthday-App-/Music/50cent.mp3')#add path of this project were u clone it and Where the music file is . 
 def Birth():
 	now = datetime.datetime.now()
 	if int(ent_2.get()) == int(now.day) and int(ent_3.get()) == int(now.month):
@@ -89,6 +89,7 @@ b2.grid(column=1 , row= 6)
 #-------------------------------------------------------------------------
 b3 = tk.Button(text='Reset',command=reset)
 b3.grid (column=1, row=7)
+
 
 
 
