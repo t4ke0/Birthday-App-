@@ -14,7 +14,7 @@ window.geometry("600x500")
 
 #---------------Function ---------------------------------
 mixer.init()
-mixer.music.load('C:/Users/yassine/Desktop/Project/Music/50cent.mp3')
+mixer.music.load('C:/Users/yassine/Desktop/Project/Music/50cent.mp3')#add path of this project were u clone it and Where the music file is . 
 def Birth():
 	now = datetime.datetime.now()
 	if int(ent_2.get()) == int(now.day) and int(ent_3.get()) == int(now.month):
@@ -44,6 +44,9 @@ def age_display():
 	age_display.grid(column=0, row = 7)
 	age_display.insert(END,age)
 
+def reset():
+	python = sys.executable 
+	os.execl(python,python, * sys.argv)
 
 #--------------LABEL--------------#------------------------------------
 title = tk.Label(text="Birthday Application",font=("Serif",30))
@@ -84,7 +87,8 @@ b.grid(column = 1 , row= 5 )
 b2 = tk.Button(text="Check your Age ! ", bg='green',command=age_display)
 b2.grid(column=1 , row= 6)
 #-------------------------------------------------------------------------
-
+b3 = tk.Button(text='Reset',command=reset)
+b3.grid (column=1, row=7)
 
 
 
