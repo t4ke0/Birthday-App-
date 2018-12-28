@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import * 
 import datetime  
 from datetime import date
-from pygame import mixer 
+import webbrowser
 
 window = tk.Tk()
 
@@ -14,12 +14,10 @@ window.title("Birthday")
 window.geometry("600x500")
 
 #---------------Function ---------------------------------
-mixer.init()
-mixer.music.load('C:/Users/yassine/Desktop/Birthday-App-/Music/50cent.mp3')#add path of this project were u clone it and Where the music file is . 
 def Birth():
 	now = datetime.datetime.now()
 	if int(ent_2.get()) == int(now.day) and int(ent_3.get()) == int(now.month):
-		mixer.music.play()
+		webbrowser.open(ent_5.get())
 		return ("Happy Birthday " + str(ent_1.get()))	
 	else :
 		return ("Oops it's not currently your Birthday So make sure to come back later " + str(ent_1.get()))
@@ -65,6 +63,11 @@ inp_3.grid(column=0 , row=3)
 inp_4 =tk.Label(text='Enter the Year were you born on it :')
 inp_4.grid(column = 0 , row=4)
 
+inp_5 = tk.Label(text='Enter the link of your favorite music :')
+inp_5.grid(column = 0 , row = 5)
+
+                 
+
 photo = PhotoImage(file="giphy.gif")
 ph = Label(image=photo)
 ph.grid(column=1 , row=0)
@@ -81,15 +84,18 @@ ent_3.grid(column= 1 , row=3)
 ent_4 = tk.Entry()
 ent_4.grid(column= 1 , row=4)
 
+ent_5 = tk.Entry()
+ent_5.grid(column = 1 , row = 5) 
+
 #------------Check if is your Birthday Button--------#----------------------
 b = tk.Button(text='Check your Birthday',bg="pink",command=celebrating_display)
-b.grid(column = 1 , row= 5 )
+b.grid(column = 1 , row= 6 )
 
 b2 = tk.Button(text="Check your Age ! ", bg='green',command=age_display)
-b2.grid(column=1 , row= 6)
+b2.grid(column=1 , row= 7)
 #-------------------------------------------------------------------------
 b3 = tk.Button(text='Reset',command=reset)
-b3.grid (column=1, row=7)
+b3.grid (column=1, row=8)
 
 
 
